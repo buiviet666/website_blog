@@ -1,0 +1,33 @@
+<div class="author">
+    <h1 class="author_heading">Hi, i'm VietBui</h1>
+    <p class="author_body">web dev</p>
+</div>
+
+<img src="/img/the_last_of_us_by_maciejkuciara_d5v92fm.jpg" alt="img person" class="hero-img" width="981px"
+    height="528px" />
+
+<section class="articles">
+    <h2 class="articles_heading">latest posts</h2>
+
+    <ul class="articles-ul">
+
+        <% data.forEach(post=> { %>
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span>
+                        <%= post.tittle %>
+                    </span>
+                    <span class="articles-list_date">
+                        <%= post.createdAt.toDateString() %>
+                    </span>
+                </a>
+            </li>
+            <% }) %>
+
+    </ul>
+
+    <% if(nextPage !==null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View older post</a>
+        <% } %>
+
+</section>
